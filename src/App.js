@@ -1,8 +1,7 @@
-import React from 'react'
 
-const App = () => {
+function App() {
   return (
-    <div>App</div>
+    <div className="text-3xl underline font-bold">App</div>
   )
 }
 
