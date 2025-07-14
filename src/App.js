@@ -1,7 +1,13 @@
+import { Footer, Header } from "./components"
+import { AllRoutes } from "./routes/AllRoutes"
 
 function App() {
   return (
-    <div className="text-3xl underline font-bold">App</div>
+    <div className="App">
+      <Header/>
+      <AllRoutes/>
+      <Footer/>
+    </div>
   )
 }
 
