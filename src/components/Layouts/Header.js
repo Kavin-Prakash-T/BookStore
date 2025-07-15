@@ -15,7 +15,7 @@ export const Header = () => {
                     <span className="cursor-pointer text-xl text-gray-700 dark:text-white mr-5 bi bi-search"></span>
                     <Link to="/cart" className="text-gray-700 dark:text-white mr-5">
                     <span className="text-2xl bi bi-cart-fill relative">
-                        <span className="text-white text-sm absolute -top-1 left-2.5 bg-rose-500 px-1 rounded-full ">0</span>
+                        <span className="text-white text-sm absolute -top-1 left-2.5 bg-rose-500 px-1 w-4  rounded-full ">0</span>
                     </span>                    
                     </Link>
                     <span className="bi bi-person-circle cursor-pointer text-2xl text-gray-700 dark:text-white"></span>
