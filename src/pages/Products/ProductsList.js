@@ -6,12 +6,10 @@ import { useTitle } from "../../hooks/useTitle";
 import { useFilter } from "../../context";
 
 export const ProductsList = () => {
-//const {productList}=useFilter();
-console.log(productList);
+const {products,initialProductList}=useFilter();
 
   useTitle("Explore")
   const [show, setShow] = useState(false);
-  const [products, setProducts] = useState([]);
   const search = useLocation().search;
   const searchTerm = new URLSearchParams(search).get("q");
 
@@ -20,11 +18,11 @@ console.log(productList);
     const response = await fetch("http://localhost:8000/products");
     const data = await response.json();
     if (searchTerm) {
-      setProducts(data.filter(product =>
+      initialProductList(data.filter(product =>
         product.name.toLowerCase().includes(searchTerm.toLowerCase())
       ));
     } else {
-      setProducts(data);
+      initialProductList(data);
     }
   }
   fetchProducts();

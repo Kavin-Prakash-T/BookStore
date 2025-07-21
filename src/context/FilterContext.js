@@ -16,11 +16,14 @@ export const FilterProvider = ({ children }) => {
     function initialProductList(products) {
          dispatch({
             type:"PRODUCT_LIST",
-            payload:
+            payload:{
+                products:products
+            }
          })
     }
     const value = {
-        productList: [1, 2, 3]
+        products:state.productList,
+        initialProductList
     }
     return (
         <FilterContext.Provider value={value}>
