@@ -4,6 +4,6 @@ export const useTitle = (title) => {
 
   useEffect(() => {
     document.title = `${title} | BookStore`
-  },[title]);
+  }, [title]);
   return null;
 }

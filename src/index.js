@@ -11,8 +11,8 @@ root.render(
   <React.StrictMode>
     <Router>
       <FilterProvider>
-         <ScrollToTop/>
-         <App />
+        <ScrollToTop />
+        <App />
       </FilterProvider>
     </Router>
   </React.StrictMode>

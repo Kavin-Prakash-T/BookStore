@@ -1,1 +1,1 @@
-export {filterReducer} from "./filterReducer";
+export { filterReducer } from "./filterReducer";
