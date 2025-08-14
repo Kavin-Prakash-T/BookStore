@@ -239,6 +239,29 @@
   ],
   "orders": [],
   "users": [
-    
+    {
+      "email": "hello@gmail.com",
+      "password": "$2a$10$FW6ZOMCbxdZpFBvu.9Wequ43YdkU0XYfgQkwpOiKM.n4YGYlm9czW",
+      "name": "kavin",
+      "id": 1
+    },
+    {
+      "email": "Kavbbbs@gmail.com",
+      "password": "$2a$10$SkoeWPmsh0akt4EaIpYKJOi.7XFIQXe3wu6O33mAQnw/ADZd1zoVm",
+      "name": "kavjjbsbs",
+      "id": 2
+    },
+    {
+      "email": "ksnsdsnj@gmail.com",
+      "password": "$2a$10$2GN2yDICv/.UCPD1Pm1sGuqyqHqoJ/vLoo7OEdSR.SOieTm/m6/qW",
+      "name": "kavisxnj",
+      "id": 3
+    },
+    {
+      "email": "kavin@gmail.com",
+      "password": "$2a$10$j0XVZ2iCmGaUG1ia1QEaTOONGNBvVfL8SVJVHXGGYn26VixtD0NZK",
+      "name": "kavin",
+      "id": 4
+    }
   ]
 }
