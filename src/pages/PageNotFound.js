@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"; 
+import Logo from "../assets/logo.png";
 export const PageNotFound = () => {
     return (
         <main>
@@ -6,7 +7,7 @@ export const PageNotFound = () => {
                 <div className="flex flex-col items-center my-4">
                     <p className="text-7xl text-gray-700 font-bold my-10 dark:text-white text-center">404, Oops!</p>
                     <div className="max-w-xs">
-                        <img className="" src="" alt="" />
+                        <img className="" src={Logo} alt="" />
                     </div>
                 </div>
                 <div className="flex justify-center my-4">
