@@ -1,5 +1,3 @@
-import { Rating } from "../components/Elements/Rating";
-
 export const filterReducer = (state, action) => {
     const { type, payload } = action;
 
