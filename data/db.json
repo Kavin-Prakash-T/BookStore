@@ -237,8 +237,13 @@
       "best_seller": true
     }
   ],
-  "orders": [
-  ],
+  "orders": [],
   "users": [
+    {
+      "email": "guest@gmail.com",
+      "password": "$2a$10$WLONlUc/9cdHYnqLbbOWqOrn.KQLGswwz87rJaC1yjgTX.C8HLAz.",
+      "name": "Kavin",
+      "id": 1
+    }
   ]
 }
