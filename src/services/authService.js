@@ -4,9 +4,9 @@ export async function login(authDetail){
           headers:{"content-Type":"application/json"},
           body:JSON.stringify(authDetail)
         }
-        const response= await fetch("http://localhost:8000/login",requestOptions);
+        const response= await fetch(`${process.env.REACT_APP_HOST}/login`,requestOptions);
          if(!response.ok){
-        throw { message: response.statusText, status: response.status }; //eslint-disable-line
+        throw { message: response.statusText, status: response.status }; 
     }
         const data=await response.json();
 
@@ -24,7 +24,7 @@ export async function register(authDetail) {
       headers:{"content-Type":"application/json"},
       body:JSON.stringify(authDetail)
     }
-    const response= await fetch("http://localhost:8000/register",requestOptions);
+    const response= await fetch(`${process.env.REACT_APP_HOST}/register`,requestOptions);
      if(!response.ok){
         throw { message: response.statusText, status: response.status }; //eslint-disable-line
     }

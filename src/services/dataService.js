@@ -5,7 +5,7 @@ export async function getUser() {
         method: "GET",
         headers: { "content-Type": "application/json", Authorization: `Bearer ${token}` }
     }
-    const response = await fetch(`http://localhost:8000/600/users/${bsid}`, requestOptions);
+    const response = await fetch(`${process.env.REACT_APP_HOST}/600/users/${bsid}`, requestOptions);
      if(!response.ok){
         throw { message: response.statusText, status: response.status }; //eslint-disable-line
     }
@@ -20,7 +20,7 @@ export async function getUserOrders() {
         method: "GET",
         headers: { "content-Type": "application/json", Authorization: `Bearer ${token}` }
     }
-    const response = await fetch(`http://localhost:8000/660/orders?user.id=${bsid}`,requestOptions);
+    const response = await fetch(`${process.env.REACT_APP_HOST}/660/orders?user.id=${bsid}`,requestOptions);
      if(!response.ok){
         throw { message: response.statusText, status: response.status }; //eslint-disable-line
     }
@@ -43,7 +43,7 @@ export async function createOrder(cartList, total, user) {
         headers: { "content-Type": "application/json", Authorization: `Bearer ${token}` },
         body: JSON.stringify(order)
     }
-    const response = await fetch("http://localhost:8000/660/orders",requestOptions );
+    const response = await fetch(`${process.env.REACT_APP_HOST}/660/orders`,requestOptions );
      if(!response.ok){
         throw { message: response.statusText, status: response.status }; //eslint-disable-line
     }
