@@ -4,6 +4,7 @@ import { ProductCard } from "../../components";
 import { FilterBar } from "./components/FilterBar";
 import { useTitle } from "../../hooks/useTitle";
 import { useFilter } from "../../context";
+import { getProductList } from "../../services";
 
 export const ProductsList = () => {
 const {products,initialProductList}=useFilter();
@@ -15,8 +16,7 @@ const {products,initialProductList}=useFilter();
 
   useEffect(() => {
   async function fetchProducts() {
-    const response = await fetch("http://localhost:8000/products");
-    const data = await response.json();
+   const data= await getProductList();
     if (searchTerm) {
       initialProductList(data.filter(product =>
         product.name.toLowerCase().includes(searchTerm.toLowerCase())
@@ -26,7 +26,7 @@ const {products,initialProductList}=useFilter();
     }
   }
   fetchProducts();
-}, [searchTerm]);
+}, [searchTerm,initialProductList]);
 
   return (
     <main>
