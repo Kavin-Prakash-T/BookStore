@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { useTitle } from "../hooks/useTitle";
 import { useCart } from "../context";
 import { getProduct } from "../services/productService";
+import { toast } from "react-toastify";
 
 export const ProductDetail = () => {
 
@@ -14,8 +15,12 @@ export const ProductDetail = () => {
 
   useEffect(() => {
     async function fetchProducts() {
-      const data = await getProduct(id);
+      try{
+        const data = await getProduct(id);
       setProduct(data);
+      }catch(error){
+       toast.error(error.message);
+      }
     }
     fetchProducts();
   }, [id])

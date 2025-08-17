@@ -5,6 +5,7 @@ import { FilterBar } from "./components/FilterBar";
 import { useTitle } from "../../hooks/useTitle";
 import { useFilter } from "../../context";
 import { getProductList } from "../../services";
+import { toast } from "react-toastify";
 
 export const ProductsList = () => {
 const {products,initialProductList}=useFilter();
@@ -16,6 +17,7 @@ const {products,initialProductList}=useFilter();
 
   useEffect(() => {
   async function fetchProducts() {
+    try{
    const data= await getProductList();
     if (searchTerm) {
       initialProductList(data.filter(product =>
@@ -24,6 +26,10 @@ const {products,initialProductList}=useFilter();
     } else {
       initialProductList(data);
     }
+  }
+  catch(error){
+    toast.error(error.message);
+  }
   }
   fetchProducts();
 }, [searchTerm,initialProductList]);

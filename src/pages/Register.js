@@ -9,6 +9,7 @@ export const Register = () => {
   const navigate=useNavigate();
   async function handleRegister(event){
     event.preventDefault();
+    try{
     const authDetail={
       name:event.target.name.value,
       email:event.target.email.value,
@@ -16,6 +17,10 @@ export const Register = () => {
     }
     const data=await register(authDetail);
     data.accessToken?navigate("/products"):toast.error(data);
+  }
+  catch(error){
+    toast.error(error.message);
+  }
 
   }
   return (

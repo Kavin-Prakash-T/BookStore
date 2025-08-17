@@ -5,6 +5,9 @@ export async function login(authDetail){
           body:JSON.stringify(authDetail)
         }
         const response= await fetch("http://localhost:8000/login",requestOptions);
+         if(!response.ok){
+        throw { message: response.statusText, status: response.status }; //eslint-disable-line
+    }
         const data=await response.json();
 
         if(data.accessToken){
@@ -22,6 +25,9 @@ export async function register(authDetail) {
       body:JSON.stringify(authDetail)
     }
     const response= await fetch("http://localhost:8000/register",requestOptions);
+     if(!response.ok){
+        throw { message: response.statusText, status: response.status }; //eslint-disable-line
+    }
     const data=await response.json();
     
     if(data.accessToken){
